@@ -31,7 +31,25 @@ keyboards/
 
 ## Keyboards
 
-[List your keyboards here as you add them]
+### Keebio Iris Rev 4
+- Split keyboard with 6x4 keys per half
+- Build command: `qmk compile -kb keebio/iris/rev4 -km varun`
+- Flash command: `qmk flash -kb keebio/iris/rev4 -km varun`
+
+### Keyboardio Model 01
+- Split keyboard with 6x4 keys per half
+- Build command: `qmk compile -kb keyboardio/model01 -km varun`
+- Flash command: `qmk flash -kb keyboardio/model01 -km varun`
+
+### OLKB Preonic Rev 3
+- Ortholinear keyboard with 5x12 keys
+- Build command: `qmk compile -kb olkb/preonic/rev3 -km varun`
+- Flash command: `qmk flash -kb olkb/preonic/rev3 -km varun`
+
+### Ferris Sweep
+- Split keyboard with 3x6 keys per half
+- Build command: `qmk compile -kb ferris -km varun`
+- Flash command: `qmk flash -kb ferris -km varun`
 
 ## License
 
