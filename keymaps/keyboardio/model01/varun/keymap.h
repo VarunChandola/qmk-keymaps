@@ -14,5 +14,5 @@
 #define MC_PASTE LCTL(KC_V)
 #define MC_FIND LCTL(KC_F)
 
-// Layer definitions matching the Kaleidoscope firmware
-enum layers { PRIMARY, NUMPAD, SYMBOL, FUNL }; 
+// Layer definitions matching the Iris layout
+enum layers { PRIMARY, NAVR, MOUR, NSL, NSSL, NUMPAD, SYMBOL, FUNL }; 

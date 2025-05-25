@@ -26,13 +26,61 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [PRIMARY] = LAYOUT(
     KC_ESC , KC_1   , KC_2   , KC_3   , KC_4   , KC_5   ,                      KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , KC_MINS,
     KC_BSPC, KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   , KC_HOME,    KC_PGUP, KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , KC_EQL ,
-    KC_TAB , LCTL_T(KC_A), LALT_T(KC_S), LGUI_T(KC_D), LSFT_T(KC_F), KC_G, KC_END ,    KC_PGDN, KC_H   , RSFT_T(KC_J), RGUI_T(KC_K), RALT_T(KC_L), RCTL_T(KC_SCLN), KC_QUOT,
+    KC_TAB , LCTL_T(KC_A), LGUI_T(KC_S), LALT_T(KC_D), LSFT_T(KC_F), KC_G, KC_END ,    KC_PGDN, KC_H   , LSFT_T(KC_J), LALT_T(KC_K), LGUI_T(KC_L), LCTL_T(KC_SCLN), KC_QUOT,
     KC_LCTL, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , KC_DEL ,    RGB_TOG, KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, KC_ENT ,
-                                         KC_LCTL,                                 KC_RCTL,
-                                            KC_BSPC,                           KC_SPC ,
-                                               KC_LGUI,                     KC_RALT,
+                                         KC_ESC,                                 LT(NSSL, KC_BSPC),
+                                            LT(NAVR, KC_ENT),                  LT(NSL, KC_SPC),
+                                               LT(MOUR, KC_TAB),            LT(FUNL, KC_DEL),
                                                   KC_LSFT,               KC_RSFT,
-                                      MO(NUMPAD),                                    MO(SYMBOL)
+                                      LALT(KC_D),                                    LGUI(LSFT(KC_A))
+  ),
+
+  [NAVR] = LAYOUT(
+    _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______,
+    _______, KC_LBRC, KC_7   , KC_8   , KC_9   , KC_RBRC, _______,    _______, KC_AGIN, KC_UNDO, KC_CUT , KC_COPY, KC_PSTE, _______,
+    _______, LCTL_T(KC_SCLN), LGUI_T(KC_4), LALT_T(KC_5), LSFT_T(KC_6), KC_EQL, _______,    _______, KC_CAPS, KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, _______,
+    _______, KC_GRV , KC_1   , KC_2   , KC_3   , KC_BSLS, _______,    _______, KC_INS , KC_HOME, KC_PGDN, KC_PGUP, KC_END , _______,
+                                         KC_0,                                    KC_ENT,
+                                            KC_DOT,                            KC_BSPC,
+                                               KC_MINS,                       KC_DEL,
+                                                  _______,               _______,
+                                      _______,                                        _______
+  ),
+
+  [MOUR] = LAYOUT(
+    _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______,
+    _______, KC_F12 , KC_F7  , KC_F8  , KC_F9  , KC_PSCR, _______,    _______, _______, _______, _______, _______, _______, _______,
+    _______, LCTL_T(KC_F11), LGUI_T(KC_F4), LALT_T(KC_F5), LSFT_T(KC_F6), KC_SCRL, _______,    _______, _______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, _______,
+    _______, KC_F10 , KC_F1  , KC_F2  , KC_F3  , KC_PAUS, _______,    _______, _______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, _______,
+                                         KC_APP,                                 KC_BTN1,
+                                            KC_SPC,                            KC_BTN3,
+                                               KC_TAB,                        KC_BTN2,
+                                                  _______,               _______,
+                                      _______,                                        _______
+  ),
+
+  [NSL] = LAYOUT(
+    _______, _______, _______, _______, _______, _______,                      _______, RGB_VAI, RGB_SAI, RGB_HUI, RGB_MOD, RGB_TOG,
+    _______, KC_LBRC, KC_7   , KC_8   , KC_9   , KC_RBRC, _______,    _______, _______, _______, _______, _______, _______, _______,
+    _______, KC_SCLN, KC_4   , KC_5   , KC_6   , KC_EQL , _______,    _______, _______, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______,
+    _______, KC_GRV , KC_1   , KC_2   , KC_3   , KC_BSLS, _______,    _______, _______, _______, _______, _______, _______, _______,
+                                         KC_0,                                 _______,
+                                            KC_MINS,                            _______,
+                                               KC_DOT,                       _______,
+                                                  _______,               _______,
+                                      _______,                                        _______
+  ),
+
+  [NSSL] = LAYOUT(
+    _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______,
+    _______, KC_LCBR, KC_AMPR, KC_ASTR, KC_LPRN, KC_RCBR, _______,    _______, _______, _______, _______, _______, QK_BOOT, _______,
+    _______, KC_COLN, KC_DLR , KC_PERC, KC_CIRC, KC_PLUS, _______,    _______, _______, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______,
+    _______, KC_TILD, KC_EXLM, KC_AT  , KC_HASH, KC_PIPE, _______,    _______, _______, _______, _______, KC_ALGR, _______, _______,
+                                         KC_RPRN,                                  _______,
+                                            KC_UNDS,                           _______,
+                                               KC_GT,                       _______,
+                                                  _______,               _______,
+                                      _______,                                        _______
   ),
 
   [NUMPAD] = LAYOUT(
@@ -42,9 +90,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______, _______,    _______, _______, KC_P0  , KC_P0  , KC_PDOT, KC_PEQL, _______,
                                          _______,                                 _______,
                                             _______,                           _______,
-                                               _______,                     _______,
+                                               _______,                       _______,
                                                   _______,               _______,
-                                      _______,                                        MO(FUNL)
+                                      _______,                                        _______
   ),
 
   [SYMBOL] = LAYOUT(
@@ -54,19 +102,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, KC_PERC, KC_CIRC, KC_LBRC, KC_RBRC, KC_TILD, _______,    _______, KC_AMPR, KC_1   , KC_2   , KC_3   , KC_BSLS, _______,
                                          _______,                                 _______,
                                             _______,                           _______,
-                                               _______,                     _______,
+                                               _______,                       _______,
                                                   _______,               _______,
-                                      MO(FUNL),                                        _______
+                                      _______,                                        _______
   ),
 
   [FUNL] = LAYOUT(
-    _______, RGB_TOG, RGB_MOD, RGB_HUI, RGB_SAI, RGB_VAI,                      RGB_M_P, RGB_M_B, RGB_M_R, KC_MPRV, KC_MPLY, KC_MNXT,
-    _______, RGB_RMOD, RGB_HUD, RGB_SAD, RGB_VAD, RGB_SPI, _______,    _______, _______, KC_VOLD, KC_VOLU, KC_MUTE, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______,    _______, KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, _______, _______,
-    QK_BOOT, _______, _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______, _______, _______,
-                                         _______,                                 _______,
-                                            _______,                           _______,
-                                               _______,                     _______,
+    _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______,
+    _______, KC_F12 , KC_F7  , KC_F8  , KC_F9  , KC_PSCR, _______,    _______, _______, _______, _______, _______, QK_BOOT, _______,
+    _______, KC_F11 , KC_F4  , KC_F5  , KC_F6  , KC_SCRL, _______,    _______, _______, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______,
+    _______, KC_F10 , KC_F1  , KC_F2  , KC_F3  , KC_PAUS, _______,    _______, _______, _______, _______, _______, _______, _______,
+                                         KC_APP,                                 _______,
+                                            KC_ESC,                            _______,
+                                               KC_TAB,                        _______,
                                                   _______,               _______,
                                       _______,                                        _______
   )
