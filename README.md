@@ -8,7 +8,7 @@ Personal QMK keyboard keymaps with a clean build system and QMK submodule for ea
 # Build Model 01
 ./build.sh model01
 
-# Build and flash Iris
+# Build and flash Iris Rev3
 ./build.sh iris flash
 ```
 
@@ -17,15 +17,15 @@ Personal QMK keyboard keymaps with a clean build system and QMK submodule for ea
 ```
 ├── keymaps/                    # Source keymaps (organized by manufacturer)
 │   ├── keyboardio/model01/varun/
-│   └── keebio/iris/rev4/varun/
+│   └── keebio/iris/rev3/varun/
 ├── qmk_firmware/               # QMK submodule (never modified)
-├── build.sh                   # Simple build script
+├── build.sh                   # Consolidated build script
 └── README.md
 ```
 
 ## 🔨 Build System
 
-Each keymap has its own build script that:
+The consolidated build script:
 - Temporarily copies files to QMK
 - Builds the firmware
 - Cleans up automatically
@@ -41,7 +41,7 @@ Each keymap has its own build script that:
 ```bash
 ./build.sh model01       # Build Keyboardio Model 01
 ./build.sh model01 flash # Build and flash Model 01
-./build.sh iris          # Build Keebio Iris Rev4  
+./build.sh iris          # Build Keebio Iris Rev3  
 ./build.sh iris flash    # Build and flash Iris
 ```
 
@@ -49,13 +49,13 @@ Each keymap has its own build script that:
 
 ### Keyboardio Model 01
 - **Layout**: Split ergonomic with 64 keys
-- **Features**: Home row mods, RGB controls, numpad layer
+- **Features**: Home row mods, palm keys for dictation/Zoom mute
 - **Build**: `./build.sh model01`
-- **Layers**: PRIMARY, NUMPAD, SYMBOL, FUNL
+- **Layers**: PRIMARY, NAVR, MOUR, NSL, NSSL, FUNL
 
-### Keebio Iris Rev4
+### Keebio Iris Rev3
 - **Layout**: Split 60% with 56 keys + rotary encoder
-- **Features**: Home row mods, RGB underglow, encoder controls
+- **Features**: Home row mods, RGB underglow, encoder controls, dictation/Zoom mute
 - **Build**: `./build.sh iris`
 - **Layers**: QWERTY, COLEMAK_DH, NAVR, MOUR, NSL, NSSL, FUNL
 
@@ -74,7 +74,7 @@ Each keymap has its own build script that:
 
 3. **Build a keyboard:**
    ```bash
-   ./build.sh model01
+   ./build.sh iris
    ```
 
 ## 🔄 Updating QMK
@@ -89,26 +89,27 @@ The QMK submodule stays clean, so updates are simple!
 
 ## ✨ Features
 
-- **Clean structure** - No redundant files
-- **Easy builds** - Simple `./build.sh [keyboard]` command
+- **Consolidated build system** - Single `build.sh` handles all keyboards
+- **Clean structure** - No duplicate build scripts
 - **QMK submodule** - Easy to update, never modified
-- **Automatic cleanup** - Build scripts clean up temporary files
+- **Automatic cleanup** - Build script cleans up temporary files
 - **Modern QMK** - Fixed all compatibility issues (QK_BOOT, removed deprecated defines)
 
 ## 🎯 Key Features by Keyboard
 
 ### Model 01
-- Home row mods (GACS/CAGS)
-- RGB matrix controls
-- Dedicated numpad layer
-- Function key layer with media controls
+- Home row mods (LCTL/LGUI/LALT/LSFT)
+- Palm keys: Left = Apple dictation (Option+D), Right = Zoom mute (Cmd+Shift+A)
+- Navigation, mouse, number, and function layers
+- Consistent layer structure with Iris
 
-### Iris Rev4
+### Iris Rev3
+- Home row mods (LCTL/LGUI/LALT/LSFT)
+- Thumb clusters with layer taps
+- Inner thumb keys: Left = Apple dictation (Option+D), Right = Zoom mute (Cmd+Shift+A)
 - Multiple base layers (QWERTY, Colemak-DH)
-- Navigation layer with arrow keys
-- Mouse control layer
-- Symbol layers for programming
-- Encoder support for volume/RGB control
+- Navigation, mouse, symbol, and function layers
+- Encoder support for volume control
 
 ## 📝 License
 
